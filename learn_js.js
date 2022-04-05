@@ -359,7 +359,7 @@ console.log(b27(1.03))
 // }
 // console.log(b28(3.43))
 
-function b28_1(a){
+function b28_1(a) {
     let b, c;
     b = a * a; //2
 
@@ -370,103 +370,340 @@ function b28_1(a){
     return c;
 
 }
+
 console.log(b28_1(3.43))
 
-function b29(a){
+function b29(a) {
     const p = 3.14
-    if (a>=0 && a<360){
-        result= (a*p)/180;
+    if (a >= 0 && a < 360) {
+        result = (a * p) / 180;
     }
     return result.toFixed(2)
 }
+
 console.log(b29(92.18))
 
 //30
-function b30(a){
+function b30(a) {
     const p = 3.14
-    if (a>=0 && a<2*p){
-        result= (a*180)/p;
+    if (a >= 0 && a < 2 * p) {
+        result = (a * 180) / p;
     }
     return result.toFixed(2)
 }
-console.log(b30 (4.99))
+
+console.log(b30(4.99))
 
 //31
-function b31(tF){
-    let tC = (tF-32)*(5/9);
+function b31(tF) {
+    let tC = (tF - 32) * (5 / 9);
     return tC.toFixed(2)
 
 }
+
 console.log(b31(29.93))
 
 //32
-function b32(tC){
-    let tF = (tC-32)*(5/9);
+function b32(tC) {
+    let tF = (tC - 32) * (5 / 9);
     return tF.toFixed(2)
 
 }
+
 console.log(b32(54.86))
 
 //33
-function b33(x,y,price){
-    let kg = price/x;
-  let yPrice=y*kg;
+function b33(x, y, price) {
+    let kg = price / x;
+    let yPrice = y * kg;
     return [kg.toFixed(2), yPrice.toFixed(2)]
 }
+
 console.log(b33(3.000, 2.900, 195.3))
 
 //34
 
-function b34(x, priceX, y, priceY){
-    let choclate = priceX/x;
-    let iriska = priceY/y;
-    let expens = choclate/iriska;
+function b34(x, priceX, y, priceY) {
+    let choclate = priceX / x;
+    let iriska = priceY / y;
+    let expens = choclate / iriska;
     return [choclate, iriska, expens]
 }
+
 console.log(b34(3.900, 292.50, 2.800, 105.00))
 
 //35
 
-function b35(lake, river,t1,t2){
+function b35(lake, river, t1, t2) {
     let s;
-    if(lake>river){
-        s= lake*t1+(lake -river) * t2
+    if (lake > river) {
+        s = lake * t1 + (lake - river) * t2
     }
     return s;
 }
-console.log(b35(8.00, 1.00, 3.00,1.00))
+
+console.log(b35(8.00, 1.00, 3.00, 1.00))
 
 //36
-function b36(V1, V2, S, T){
-    let s = S+(V1*T+V2*T);
+function b36(V1, V2, S, T) {
+    let s = S + (V1 * T + V2 * T);
     return s;
 }
+
 console.log(b36(80.00, 80.00, 130.00, 3.00))
 
 //37
-function b37(V1, V2, S, T){
-    let s = Math.abs(S-(V1*T+V2*T));
+function b37(V1, V2, S, T) {
+    let s = Math.abs(S - (V1 * T + V2 * T));
     return s;
 }
+
 console.log(b36(70.00, 80.00, 30.00, 1.00))
 
 //38
 
-function b38(a,b) {
+function b38(a, b) {
     let x
     if (a != 0) {
         x = -b / a;
         return x;
     }
 }
+
 console.log(b38(5.00, 25.00))
+
 //39
 
-function b39(a,b,c){
-    let D= b**2 - 4 *a *c;
-    let x = (-b +- Math.sqrt(D))/(2*a)
+function b39(a, b, c) {
+    let D = b ** 2 - 4 * a * c;
+    let x = (-b + -Math.sqrt(D)) / (2 * a)
     return [Math.min(x), Math.max(x)]
 }
-console.log(b39(4.00, -28, 48 )) // no max value
 
-//40
+console.log(b39(4.00, -28, 48)) // no max value
+
+//40                        DATE: 05.04.2022
+function b40(a1, a2, b1, b2, c1, c2) {
+    let d = a1 * b2 - a2 * b1;
+    let x = (c1 * b2 - c2 * b1) / d;
+    let y = (a1 * c2 - a2 * c1) / d;
+    return [Math.abs(x), y]
+}
+
+console.log(b40(-5, 1, 1, 0, 2, 0))
+
+//        1                              INTEGER
+function int1(l) {
+    if (Number.isInteger(l)) {
+        return Math.round(l / 100)
+    }
+
+}
+
+console.log(int1(9714))
+
+//2
+function int2(m) {
+    if (Number.isInteger(m)) {
+        return Math.round(m / 1000)
+    }
+
+}
+
+console.log(int2(1273))
+
+//3
+
+function int3(kb) {
+    if (Number.isInteger(kb)) {
+        return Math.floor(kb / 1024)
+    }
+
+}
+
+console.log(int3(2988))
+
+//4
+function int4(a, b) {
+    if (a > b) {
+        let line = a / b;
+        return Math.round(Math.floor(line))
+    }
+}
+
+console.log(int4(21, 17))
+
+//5
+
+function int5(a, b) {
+    if (a > b) {
+        let line = Math.floor(a / b);
+        let rem = a - (line * b)
+        return rem
+    }
+}
+
+console.log(int5(46, 19))
+
+//6
+
+function int6(int) {
+    let first = Math.round(int / 10)
+    let second = int % 10
+    return [first, second]
+}
+
+console.log(int6(90))
+
+//7
+function int7(int) {
+    let first = Math.round(int / 10)
+    let second = int % 10
+    return [first + second, first * second]
+}
+
+console.log(int7(74))
+
+//8
+function int8(int) {
+    let res = Math.round(int / 10 + (int % 10) * 10)
+
+    return res
+
+}
+
+console.log(int8(74))
+
+//9
+
+function int9(int) {
+    let first = Math.round(Math.floor(int / 100))
+    return first
+}
+
+console.log(int9(392))
+
+//10
+
+function int10(int) {
+    let last = Math.round(int % 10)
+    let mid = Math.floor((int % 100) / 10)
+    return [last, mid]
+}
+
+console.log(int10(657))
+
+//11
+function int11(int) {
+    let a = Math.round(Math.floor(int / 100))
+    let b = Math.round(Math.floor(int % 10))
+    let c = Math.round(Math.floor((int % 100) / 10))
+    return [(a + b + c), (a * b * c)]
+}
+
+console.log(int11(769))
+
+//12
+function int12(int) {
+    let res = int % 10 * 100 + (Math.floor((int % 100) / 10) * 10) + Math.round(Math.floor(int / 100));
+    return res;
+}
+
+console.log(int12(845))
+
+//13
+
+function int13(int){
+    let res = (int%100)*10 + Math.round(Math.floor(int/100))
+    return res
+}
+console.log(int13(156))
+
+//14
+
+
+function int14(int){
+    let result = Math.round(Math.floor(int/10)) + (int%10)*100
+    return result
+}
+console.log(int14(783))
+
+//15
+function int15(int){
+    let result = Math.floor((int%100)/10)*100 + Math.floor(int/100)*10 + int%10
+    return result
+}
+console.log(int15(426))
+
+//16
+
+function int16(int){
+    let result = Math.floor(int/100)*100 + (int%10)*10 + Math.floor((int%100)/10)
+    return result
+}
+console.log(int16(192))
+
+//17
+
+function int17(int){
+    let result
+    if(int>999){
+    result = Math.floor((int%1000)/100)
+        return result
+}
+}
+console.log(int17(23427))
+
+//18
+function int18(int){
+    let result
+    if(int>999){
+        result = Math.floor((int/1000))
+        return result
+    }
+}
+console.log(int18(8734))
+
+//19
+
+function int19(N){
+    let min=Math.floor(N/60)
+    return min
+  }
+  console.log(int19(26092))
+
+//20
+
+function int20(N){
+    let min=Math.floor(((N/60)/60))
+
+    return min
+}
+console.log(int20(21737))
+
+//21
+
+function int21(N){
+    let res = N%60;
+    return res;
+
+}
+console.log(int21(28421))
+
+//22
+
+function int22(N){
+    let res = N;
+    return res;
+
+}
+console.log(int22(3421))
+
+//23
+
+function int23(N){
+    let res = Math.floor(N/120);
+    return res;
+
+}
+console.log(int23(7088)) /// anw = 58!!! here - 59 why???
