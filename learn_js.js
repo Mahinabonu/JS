@@ -707,3 +707,10 @@ function int23(N){
 
 }
 console.log(int23(7088)) /// anw = 58!!! here - 59 why???
+
+
+//24
+//
+// function int24(k){
+//
+// }
