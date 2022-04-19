@@ -157,6 +157,5 @@ function isPlainObj(obj){
 let dat={a: 1}
 console.log(isPlainObj(dat))
 
-//2
-// let obj = ({ a: 1, b: 2 })
+
 
